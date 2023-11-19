@@ -1,0 +1,7 @@
+Django== 4.1.0
+NumPy== 1.22.1
+OpenCV-Python== 4.5.4.58
+PyZbar== 0.1.10
+django-widget-tweaks== 1.5.11
+python-http-client== 3.4.3
+sib-api-v3-sdk== 7.0.0
