@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="{% static 'styles/gallerystyle.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    
+    <div class="maindiv">
+        <br>
+        <br>
+        <h1 style="color: aliceblue" class="heading">GALLERY</h1>
+        <br>
+        <br>
+        <br>
+        <div class="carousel">
+            <div class="carousel_inner">
+               <div class="carousel_item carousel_item__active">
+                  <img src='{% static "img/2017/p7.png" %}' alt="" class="carousel_img">
+                  <div class="carousel_caption">
+                     
+                  </div>
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/2017/p8.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/img1.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/img2.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/img3.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/img4.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/2017/p9.png" %}' alt="" class="carousel_img">
+               </div>
+               <div class="carousel_item">
+                  <img src='{% static "img/img4.png" %}' alt="" class="carousel_img">
+               </div>
+            </div>
+      
+            <div class="carousel_indicator">
+               <button class="carousel_dot carousel_dot__active"></button>
+               <button class="carousel_dot"></button>
+               <button class="carousel_dot"></button>
+            </div>
+      
+            <div class="carousel_control">
+               <button class="carousel_button carousel_button__prev">
+                  <i class="fas fa-chevron-left"></i>
+               </button>
+               <button class="carousel_button carousel_button__next">
+                  <i class="fas fa-chevron-right"></i>
+               </button>
+            </div>
+         </div>
+      
+        <div class="gallery">
+            <ul class="controls">
+                <li class="buttons active" data-filter="all">All</li>
+                <!-- Add buttons for each year dynamically -->
+                {% for year in unique_years %}
+                    <li class="buttons" data-filter="{{ year }}">{{ year }}</li>
+                {% endfor %}
+            </ul>
+            <div class="image-container">
+                {% for image in gallery_images %}
+                    <a href="{{ image.photo.url }}" class="image {{ image.year }}" id="image">
+                        <img src="{{ image.photo.url }}" alt="{{ image.year }}">
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="{% static 'styles/script.js' %}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.buttons').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                var filter = $(this).attr('data-filter');
+                if (filter == 'all') {
+                    $('.image').show(400);
+                } else {
+                    $('.image').not('.' + filter).hide(200);
+                    $('.image').filter('.' + filter).show(200);
+                }
+            });
+
+            $('.gallery').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+</html>

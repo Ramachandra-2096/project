@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Hero Section</title>
+    <script>
+      document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+      });
+  </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        .event-card {
+          position: relative;
+          overflow: hidden;
+          border-radius: 1.2rem;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+      
+        .event-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+      
+        .event-card img {
+          width: 100%;
+          height: 15rem;
+          object-fit: cover;
+          border-radius: 1.2rem 1.2rem 0 0;
+          transition: transform 0.3s ease-in-out;
+        }
+      
+        .event-card:hover img {
+          transform: scale(1.1);
+        }
+      
+        .content {
+          padding: 1.5rem;
+        }
+      
+        .event-card h3 {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          color: #fff;
+        }
+      
+        .event-card p {
+          font-size: 1.2rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          color: #fff;
+        }
+      
+        .event-card .time {
+          font-size: 1.2rem;
+          color: #fff;
+        }
+      
+        .event-card .date {
+          font-size: 1rem;
+          color: #fff;
+        }
+      </style>
+</head>
+
+<body style="background-color: rgba(113, 8, 31, 0.746);"class="font-sans  text-white">
+    <header style="background-color: rgba(113, 8, 31, 0.746);" class=" p-4">
+        <div class="flex items-center justify-end">
+            <div class="first">
+                <nav id="first-bar">
+                    <ul class="flex space-x-4">
+                        <li><a href="#" class="text-white text-2xl"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" class="text-white text-2xl"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="text-white text-2xl"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#" class="text-white text-2xl"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    
+    <!-- Header Section -->
+    <header style="background-color: rgba(65, 7, 20, 0.746);"class="p-10">
+        <div class="flex items-center justify-between">
+            <div class="clgname flex items-center">
+                <img src="{% static 'images/logo.png' %}" height="100"width="100" id="logo" class="mr-4">
+                <div>
+                    <h2 class="text-white text-4xl font-bold">SHRI MADHWA VADIRAJA INSTITUTE OF</h2>
+                    <h2 class="text-white text-4xl font-bold">TECHNOLOGY AND MANAGEMENT</h2>
+                    <p class="text-white text-2xl">A Unit of Shri Sode Vadiraja Mutt Education Trust</p>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+   <!-- Navigation Bar -->
+  <nav style="background-color: rgba(68, 4, 4, 0.598);"class="p-5 m-0" >
+    <div class="container mx-auto p-0 m-0"> <!-- Set padding and margin to 0 -->
+      <!-- Navigation Links -->
+      <div class="flex justify-between items-center">
+        <div class="space-x-4">
+          <a href="#" class="text-white text-2xl hover:text-gray-300 transition duration-300">Home</a>
+          <a href="#about" class="text-white text-2xl hover:text-gray-300 transition duration-300">About</a>
+          <a href="custom_login" class="text-white text-2xl hover:text-gray-300 transition duration-300">Login/Sign up</a>
+          <a href="#" class="text-white hover:text-gray-300 transition duration-300"><i class="fa-solid fa-plane">Tour</i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section with Video Background and Red Overlay -->
+<section class="hero h-screen relative overflow-hidden">
+    <!-- Video Background with Blur Effect -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <video autoplay muted loop class="w-full h-full object-cover filter blur-smopacity-60">
+            <source src="{% static 'images/masalaVideo.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Red Overlay -->
+    <div class="absolute inset-0 w-full h-full bg-red-300 opacity-60"></div>
+
+    <!-- Content Container with Text Overlay -->
+    <<div class="absolute inset-0 w-full h-full flex items-start justify-start text-white p-8">
+        <!-- Text Content -->
+        <div class="max-w-5xl">
+            <h1 class="text-8xl font-bold">WELCOME TO</h1>
+            <h1 class="text-8xl font-bold italic">VARNOTSAVA</h1>
+            <br>
+            <h1 id="about" class="text-5xl font-bold">About</h1>
+            <br>
+            <p class="mb-4  text-2xl">
+                <span class="aboutinfo"></span>
+            </p>
+            <br>
+            <p class="mb-4  text-2xl">
+                <span class="about-info"></span>
+            </p>
+            <!-- Add more content as needed -->
+        </div>
+    </div>
+    
+</section>   
+
+    <!-- Add this section to your existing HTML file -->
+<section class="events-section bg-cover bg-center py-16" style="background-image: url('{% static 'images/back3.jpg' %}')">
+    <div class="container mx-auto">
+        <h2 class="text-5xl font-bold text-white mb-8 text-center">SCHEDULE</h2>
+<br><br>
+
+        <!-- Event Cards -->
+        <div class="grid text-white grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Event Card 1 -->
+            <div class="event-card">
+                <img src="{% static 'images/annual.png' %}" alt="Event 1">
+                <div class="content">
+                  <h3>Anual day</h3>
+                  <p>
+                    <span class="time">9:30 AM - Anual day Inaugural Function.</span> <br>
+                    <span class="time">10:30 AM - Inter Collegiate Competitions.</span> <br>
+                    <span class="time">3:30 PM - Anual day Valedictory Function.</span> <br>
+                    <span class="time">5:00 PM - 7:00 PM - SMVITM Band Performance.</span>
+                  </p>
+                  <p class="date">Date: 23,March,2023</p>
+                </div>
+              </div>
+
+            <!-- Event Card 2 -->
+            <div class="event-card">
+                <img src="{% static 'images/varn (2).png' %}" alt="Event 1">
+                <div class="content">
+                  <h3>Varnotsava</h3>
+                  <p>
+                    <span class="time">9:30 AM - Varnotsava Inaugural Function.</span> <br>
+                    <span class="time">10:30 AM - Inter Collegiate Competitions.</span> <br>
+                    <span class="time">3:30 PM - Varnotsava Valedictory Function.</span> <br>
+                    <span class="time">5:00 PM - 7:00 PM - SMVITM Band Performance.</span>
+                  </p>
+                  <p class="date">Date: 24,March,2023</p>
+                </div>
+              </div>
+
+            <!-- Event Card 3 -->
+            <div class="event-card">
+                <img src="{% static 'images/food.png' %}" alt="Event 1">
+                <div class="content">
+                  <h3>Foodfest and Auto-Expo</h3>
+                  <p>
+                    <span class="time">9:30 AM - Varnotsava Inaugural Function.</span> <br>
+                    <span class="time">10:30 AM - Inter Collegiate Competitions.</span> <br>
+                    <span class="time">3:30 PM - Varnotsava Valedictory Function.</span> <br>
+                    <span class="time">5:00 PM - 7:00 PM - SMVITM Band Performance.</span>
+                  </p>
+                  <p class="date">Date: 24,March, 2023</p>
+                </div>
+              </div>
+
+              <!-- Event Card 4 -->
+            <div class="event-card">
+              <img src="{% static 'images/concert.png' %}" alt="Event 1">
+              <div class="content">
+                <h3>Live concert</h3>
+                <p>
+                  <span class="time">9:30 AM - Graduation Day</span> <br>
+                  <span class="time">3:00 PM - Alumni Meet</span> <br>
+                  <span class="time">7:00 PM - 8:30 PM - AGAM Live Concert</span>
+                </p>
+                <p class="date">Date: 25,March, 2023</p>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-800 py-12">
+  <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Quick Links -->
+          <div class="col-span-1 md:col-span-1 lg:col-span-1">
+              <h4 class="text-2xl font-bold mb-4 text-yellow-500">Quick Links</h4>
+              <ul class="list-none">
+                  <li><a href="https://sode-edu.in/service-rule/" class="text-white hover:text-yellow-500">Service Rule</a></li>
+                  <li><a href="https://sode-edu.in/accreditation-status/" class="text-white hover:text-yellow-500">Accreditation</a></li>
+                  <li><a href="https://sode-edu.in/faculty-recruitment/" class="text-white hover:text-yellow-500">Career Opportunities</a></li>
+                  <li><a href="https://sode-edu.in/college-news-letter/" class="text-white hover:text-yellow-500">College Newsletter</a></li>
+              </ul>
+          </div>
+
+          <!-- Useful Info -->
+          <div class="col-span-1 md:col-span-1 lg:col-span-1">
+              <h4 class="text-2xl font-bold mb-4 text-yellow-500">Useful Info</h4>
+              <ul class="list-none">
+                  <li><a href="https://sode-edu.in/institute-academic-calendar/" class="text-white hover:text-yellow-500">Academic Calendar</a></li>
+                  <li><a href="https://sode-edu.in/general-holidays/" class="text-white hover:text-yellow-500">General Holidays</a></li>
+                  <!-- Add other list items -->
+              </ul>
+          </div>
+
+          <!-- Contact Us -->
+          <div class="col-span-1 md:col-span-1 lg:col-span-1">
+              <h5 class="text-xl font-bold mb-4 text-yellow-500">Contact Us</h5>
+              <p class="text-sm">
+                  Shri Madhwa Vadiraja Institute of Technology and Management<br/>
+                  Vishwothama Nagar, Bantakal<br/>
+                  Udupi - 574 115, Karnataka, India<br/>
+                  Tel: +91 9611615001<br/>
+                  Email: info@sode-edu.in
+              </p>
+              <!-- Add social media icons and search form -->
+          </div>
+      </div>
+
+      <!-- Copyright and Powered By -->
+      <div class="mt-8 border-t border-gray-700 flex justify-between items-center">
+          <div class="text-sm">
+              © 2023 Shri Madhwa Vadiraja Institute of Technology and Management. All Rights Reserved.
+          </div>
+      </div>
+  </div>
+</footer>
+</body><script>
+    var typed1 = new Typed(".aboutinfo", {
+        strings: [
+            "Varnothsava, the festival which celebrates the talents and cherishes the enthusiasm among the techno buds has completed its journey of 10 beautiful years, with every year adding a new glory to its account! "
+           
+        ],
+        typeSpeed: 15,
+        backSpeed: 10, 
+        smartBackspace: true,
+        showCursor: false, 
+        onComplete: function() {
+            var typed2 = new Typed(".about-info", {
+                strings: [
+                    "Milestones are reached when impossible is made possible, Varnothsava is one such milestone that gives out a platform for all kinds of talents ranging from technical to gamings and from cultural to western art forms! Technical and Cultural events with the glimpse of thrill and excitement VARNOTHSAVA 2024 awaits for you ...."
+                ],
+                typeSpeed: 15,
+                backSpeed: 10, // Adjust the backspacing speed
+                smartBackspace: true, // Enable smart backspacing
+                showCursor: false,
+                 // Optional: hide the cursor after typing
+            });
+        }
+    });
+</script>
+
+</html>
+
