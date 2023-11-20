@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import custom_login
 from django.contrib import admin
-from .views import qr_code_decoder, video_feed,event_list,add_to_purchased,stop_stream,land,gallery_view,export_view,remove_purchased
+from .views import qr_code_decoder, video_feed,event_list,add_to_purchased,stop_stream,land,gallery_view,export_view,remove_purchased, tour
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,4 +16,5 @@ urlpatterns = [
     path('event_list/',event_list, name='event_list'),
     path('add_to_purchased/<int:event_id>/', add_to_purchased, name='add_to_purchased'),
     path('stop_stream/', stop_stream, name='stop_stream'),
+    path('tour/', tour, name='tour'),
 ]

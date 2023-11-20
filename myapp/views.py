@@ -320,3 +320,6 @@ def remove_purchased(request, event_id):
             es(user.email,user.first_name,message,subject)
             return redirect('event_list')
     return HttpResponse("Invalid request")
+
+def tour(request):
+    return render(request,'vtour.html')
