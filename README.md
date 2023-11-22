@@ -26,7 +26,7 @@ Before you begin, make sure you have the following installed:
 
     ```bash
     git clone https://github.com/Ramachandra-2096/project.git
-    cd <your-project-name>
+    cd project
     ```
 
 2. Create a virtual environment (optional but recommended):
@@ -47,6 +47,7 @@ Before you begin, make sure you have the following installed:
 1. Run migrations to set up the database:
 
     ```bash
+    python manage.py makemigration
     python manage.py migrate
     ```
 
