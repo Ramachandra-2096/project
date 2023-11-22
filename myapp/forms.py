@@ -23,4 +23,5 @@ class EventRegistrationForm(forms.ModelForm):
     class Meta:
         model = event_registration
         fields = ['usn', 'payment_photo']
+        
 
