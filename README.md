@@ -1,6 +1,6 @@
 # Virtual Event Management System
 
-Welcome to the Virtual Event Management System! This Django project allows you to organize virtual events, collect participant data, generate QR codes, and manage event logistics.
+Welcome to the Virtual Event Management System! This Django project allows you to organize events, collect participant data, generate QR codes, and manage event logistics.
 
 ## Table of Contents
 
