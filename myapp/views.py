@@ -246,7 +246,6 @@ from .send_wit_ath import send_email_ath as sea
 def add_to_purchased(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     user = request.user
-
     if request.method == 'POST':
         form = EventRegistrationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -258,11 +257,8 @@ def add_to_purchased(request, event_id):
             if done:
                 registration.save()
                 return redirect('event_list')
-        else:
-            print(form.errors)
     else:
         form = EventRegistrationForm()
-
     return render(request, 'registration.html', {'form': form, 'name': user.first_name, 'event': event})
 
 
