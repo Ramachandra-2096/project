@@ -1,6 +1,5 @@
 import platform
 import os
-import time
 
 def long_beep(duration_seconds):
     system_platform = platform.system()

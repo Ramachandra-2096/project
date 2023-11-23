@@ -1,26 +1,17 @@
-from datetime import timezone
-from django.core.files.storage import FileSystemStorage
-from django.http import HttpResponse
+from django.http import Http404, HttpResponse
 import qrcode
-from django.db import transaction
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import login as auth_login, authenticate
 from django.contrib.auth.decorators import login_required
-from .forms import EventRegistrationForm, SignUpForm, LoginForm,LoginForm_Q
+from .forms import EventRegistrationForm, SignUpForm, LoginForm
 from django.contrib.auth.views import LoginView
 from django.contrib import messages
-from qrcode.image.pil import PilImage
-from io import BytesIO
-import secrets
 from .models import UserProfile
 from django.contrib.auth.models import User
-import os
 import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
 from .send_without_ath import email_sender as em
-from sib_api_v3_sdk.rest import ApiException
-from pprint import pprint
 
 class CustomLoginView(LoginView):
     def get(self, request, *args, **kwargs):
@@ -160,7 +151,7 @@ class VideoCamera:
 
                 if qr_data not in self.detected_qr_codes:
                     try:
-                        ticket = PurchasedTicket.objects.get(token=qr_data)
+                        ticket = get_object_or_404(PurchasedTicket, token=qr_data)
                         user = ticket.user
                         email = user.email
                         name = user.first_name
@@ -190,7 +181,9 @@ class VideoCamera:
                         self.detected_qr_codes.add(qr_data)
 
                     except UserProfile.DoesNotExist:
-                        print(f"No user found for token: {qr_data}")
+                        long_beep(3)
+                    except Http404:
+                        long_beep(3)
 
         except cv2.error as e:
             print(f"OpenCV error: {e}")

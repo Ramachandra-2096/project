@@ -2,7 +2,6 @@ import smtplib
 from os.path import basename
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
 from email.mime.image import MIMEImage
 from .qr_creation import generate_qr_code
 
