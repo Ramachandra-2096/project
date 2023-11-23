@@ -47,7 +47,7 @@ Before you begin, make sure you have the following installed:
 1. Run migrations to set up the database:
 
     ```bash
-    python manage.py makemigration
+    python manage.py makemigrations
     python manage.py migrate
     ```
 
