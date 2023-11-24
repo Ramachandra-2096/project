@@ -1,0 +1,406 @@
+.main{
+    margin: 0;
+}
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    background-size:cover; 
+            background-repeat: no-repeat;
+            
+}
+
+header {
+    background-color:  rgba(113, 8, 31, 0.746);
+    height: 40px;
+    display: flex;
+    justify-content:right;
+   
+}
+.collegename{
+    padding:20px;
+    background-color: rgba(113, 8, 31, 0.746) ;
+    z-index: 2;
+    align-items: center;
+   
+    
+}
+.clgname{
+    margin-left: 20px;
+    display: flex;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+footer {
+    background-color: #222;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.contact-info p,
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+}
+.social-media a {
+    margin-left: 10px;
+}
+#first-bar{
+    position:relative
+    
+}
+.first{
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#video{
+    height:605px;
+    width: 100%;
+   background-color: transparent;
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    
+}
+#video:before{
+    content:'';
+    height:613px;
+    width: 100%;
+   background-color: rgba(68, 4, 4, 0.598);
+    position: absolute;
+    display: flex;
+    z-index: 1;
+   
+}
+
+video{
+    height:4;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    
+}
+.blog{
+    height:100%;
+    width:100%;
+    background: transparent;
+    position: absolute;
+}
+#nav-bar-back{
+    background-color:  rgba(84, 6, 23, 0.638);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    
+    color:#fff;
+    z-index: 2;
+}
+#nav-bar-back:before{
+    background-color:  transparent;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    
+}
+.nav-bar{
+    background-color:  transparent;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#fff;
+    position: absolute;
+    z-index: 2;
+    
+   
+    
+}
+#headings{
+    align-items: center;
+   
+
+}
+.logo{
+    display: flex;
+    margin-top: 5px;
+}
+#navigation{
+    align-items: left;
+    margin-right: 750px;
+    margin-left: 0;
+    justify-content: space-between;
+   display: flex;
+}
+#About{
+    justify-content: center;
+    margin-left: 30px;
+    height:605px;
+    width: 100%;
+    position:absolute;
+    margin-top: 50px;
+    z-index: 2;
+}
+#about{
+    font-size: 100;
+}
+section{
+    position: relative;
+}
+.videosection {
+    position: relative;
+}
+.rulebook{
+    margin-top: 700px;
+    text-align: center;
+
+}
+.EVENTS{
+    position: relative;
+    
+    text-align: center;
+    display: flex;
+}
+.DEPTS{
+    position: relative;
+    margin-top: 700px;
+    text-align: center;
+}
+.PHOTOGALLERY{
+    position: relative;
+    margin-top: 700px;
+    text-align: center;
+}
+
+#welcome{
+    margin-left: 30px;
+    text-align: left;
+    font-style: italic;
+    
+}
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5em;
+    color: white; /* Blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow */
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.event-card {
+    max-width: 300px;
+    margin: 20px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.event-card h3 {
+    margin-bottom: 8px;
+   
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+#eventcards{display: flex;
+}
+.about-section{
+    font-size: 1.2rem;
+    margin-right: 5px;
+    
+    max-width: 1000px;
+}
+   
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  figure {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background-color:rgba(31, 7, 83, 0.501);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+    width: 100%;
+    height: 300px;
+    padding: 32px;
+    background-image: url('{{ course.course_photo.url }}'); /* Use the course photo URL dynamically */
+    background-size: cover; /* Make the image fill the container */
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.course-details {
+    padding: 1.5rem;
+}
+
+.course-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.course-description {
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.course-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #00b359;
+}
+
+.purchase-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.purchase-button:hover {
+    background-color: #2980b9;
+}/* Styles for the modal overlay */
+.modal-overlay {
+    display: none;
+    position: fixed; /* Change from absolute to fixed */
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Your existing modal styles */
+.modal-content {
+    background: #e7e7e7;
+    padding: 25px;
+    width: 650px; /* Adjusted width */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translateY(0%);
+    font-size: 17px; 
+}
+
+
+/* Close button style */
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: rgb(15, 14, 14);
+}
+
+
+.event{
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bolder;
+}
+.rounded-button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #3498db; /* Change the background color as needed */
+    color: #ffffff; /* Change the text color as needed */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    width: 200px;
+    margin-left: 800px;
+    font-weight: bold;
+}
+.twocard{
+    display: flex;
+}
+#h1{
+    text-align: center;
+    font-size: 25px;
+}
