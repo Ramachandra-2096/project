@@ -24,7 +24,7 @@ def generate_qr_code(user,event):
     qr.make(fit=True)
     # Use a specific class from qrcode.image module
     img = qr.make_image(fill_color="black", back_color="white", image_factory=PilImage)
-    save_path = os.path.join('static',user.first_name+".jpg")
+    save_path = os.path.join('static\Qr_code',user.first_name+".jpg")
     img.save(save_path)
 
     return save_path
