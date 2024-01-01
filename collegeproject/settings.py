@@ -28,8 +28,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
-
-
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',

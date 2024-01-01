@@ -12,6 +12,7 @@ import cv2
 from pyzbar.pyzbar import decode
 import numpy as np
 from .send_without_ath import email_sender as em
+from django.views.decorators.csrf import csrf_exempt
 
 class CustomLoginView(LoginView):
     def get(self, request, *args, **kwargs):
@@ -24,7 +25,7 @@ class CustomLoginView(LoginView):
 def land(request):
     return render(request,'landing.html')
 
-  
+@csrf_exempt 
 def custom_login(request):
     login_form = LoginForm()
     signup_form = SignUpForm()
@@ -190,7 +191,7 @@ class VideoCamera:
 
         return frame
 
-
+@csrf_exempt 
 def qr_code_decoder(request):
     template = loader.get_template('qr_code_decoder.html')
     return HttpResponse(template.render({}, request))
@@ -208,6 +209,7 @@ def gen(camera):
 def video_feed(request):
     return StreamingHttpResponse(gen(VideoCamera()), content_type='multipart/x-mixed-replace; boundary=frame')
 
+@csrf_exempt 
 def stop_stream(request):
     try:
         camera = VideoCamera()
@@ -218,7 +220,7 @@ def stop_stream(request):
         return JsonResponse({'status': 'error', 'message': str(e)})
 
 
-
+@csrf_exempt 
 @login_required
 def event_list(request):
     event = Event.objects.all()
@@ -234,7 +236,7 @@ from django.shortcuts import render, redirect
 from .models import Event,PurchasedTicket,event_registration
 from .qr_creation import generate_qr_code as g
 from .send_wit_ath import send_email_ath as sea
-
+@csrf_exempt 
 @login_required
 def add_to_purchased(request, event_id):
     event = get_object_or_404(Event, id=event_id)
@@ -256,6 +258,7 @@ def add_to_purchased(request, event_id):
 
 
 from .models import Gallery
+@csrf_exempt 
 @login_required
 def gallery_view(request):
     gallery_images = Gallery.objects.all()
@@ -271,7 +274,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import PurchasedTicket, Event,event_registration
 from pytz import timezone as pytz_timezone
-
+@csrf_exempt 
 def export_view(request):
     if request.method == 'POST':
         selected_id = request.POST.get('selectedNumber')
@@ -295,6 +298,7 @@ def export_view(request):
 
 
 from.send_without_ath import email_sender as es
+@csrf_exempt 
 @login_required
 def remove_purchased(request, event_id):
     event = get_object_or_404(Event, id=event_id)
