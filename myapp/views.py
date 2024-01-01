@@ -23,7 +23,7 @@ class CustomLoginView(LoginView):
         return super().post(request, *args, **kwargs)
 
 def land(request):
-    return render(request,'landing.html')
+    return render(request,'myapp/landing.html')
 
 @csrf_exempt 
 def custom_login(request):
@@ -58,7 +58,7 @@ def custom_login(request):
                 messages.error(request, 'Signup form is not valid')
                 print(form.errors)
 
-    return render(request, 'login.html', {'login_form': login_form, 'signup_form': signup_form})
+    return render(request, 'myapp/login.html', {'login_form': login_form, 'signup_form': signup_form})
 
 
 
@@ -220,7 +220,6 @@ def stop_stream(request):
         return JsonResponse({'status': 'error', 'message': str(e)})
 
 
-@csrf_exempt 
 @login_required
 def event_list(request):
     event = Event.objects.all()
@@ -228,7 +227,7 @@ def event_list(request):
     event_ids = set(
         PurchasedTicket.objects.filter(user=current_user).values_list('event_id', flat=True)
     )
-    return render(request, 'home.html', {'courses': event,'user': current_user, 'purchased_course_ids': event_ids})
+    return render(request, 'myapp/home.html', {'courses': event,'user': current_user, 'purchased_course_ids': event_ids})
 
 
 from django.contrib.auth.decorators import login_required
@@ -254,7 +253,7 @@ def add_to_purchased(request, event_id):
                 return redirect('event_list')
     else:
         form = EventRegistrationForm()
-    return render(request, 'registration.html', {'form': form, 'name': user.first_name, 'event': event})
+    return render(request, 'myapp/registration.html', {'form': form, 'name': user.first_name, 'event': event})
 
 
 from .models import Gallery
@@ -267,7 +266,7 @@ def gallery_view(request):
         'gallery_images': gallery_images,
         'unique_years': unique_years,
     }
-    return render(request, 'gallery.html', context)
+    return render(request, 'myapp/gallery.html', context)
 
 import openpyxl
 from django.shortcuts import render
@@ -294,7 +293,7 @@ def export_view(request):
         response['Content-Disposition'] = 'attachment; filename=participants.xlsx'
         workbook.save(response)
         return response
-    return render(request, 'home.html')
+    return render(request, 'myapp/home.html')
 
 
 from.send_without_ath import email_sender as es
@@ -315,4 +314,4 @@ def remove_purchased(request, event_id):
     return HttpResponse("Invalid request")
 
 def tour(request):
-    return render(request,'vtour.html')
+    return render(request,'myapp/vtour.html')
