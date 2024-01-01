@@ -23,7 +23,7 @@ LOGIN_URL = 'user_login'
 SECRET_KEY = 'django-insecure-z$!7pybu)3@l$!qk#-mef8xmcts4kai+2o5exy&xit-4_9%k7$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
